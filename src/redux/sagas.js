@@ -1,5 +1,11 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { NEWS_FETCH_REQUESTED, NEWS_FETCH_SUCCEEDED, NEWS_FETCH_FAILED } from './actionTypes';
+import {
+	NEWS_FETCH_REQUESTED,
+	NEWS_FETCH_SUCCEEDED,
+	NEWS_FETCH_FAILED,
+	INCREMENT_UPVOTE,
+	UPVOTE_UPDATE_SUCCESS,
+} from './actionTypes';
 
 const callNewsApi = async (pageNumber) => {
 	const response = await fetch(`http://hn.algolia.com/api/v1/search_by_date?tags=story&page=${pageNumber}`);
@@ -17,8 +23,18 @@ function* fetchNews(action) {
 	}
 }
 
+function* incrementUpvote(action) {
+	try {
+		//call an update api and get updated object
+		yield put({ type: UPVOTE_UPDATE_SUCCESS, payload: action.payload });
+	} catch (e) {
+		//trigger update fail
+	}
+}
+
 function* mySaga() {
 	yield takeLatest(NEWS_FETCH_REQUESTED, fetchNews);
+	yield takeLatest(INCREMENT_UPVOTE, incrementUpvote);
 }
 
 export default mySaga;

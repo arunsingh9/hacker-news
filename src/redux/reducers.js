@@ -1,4 +1,4 @@
-import { NEWS_FETCH_REQUESTED, NEWS_FETCH_SUCCEEDED, NEWS_FETCH_FAILED } from './actionTypes';
+import { NEWS_FETCH_REQUESTED, NEWS_FETCH_SUCCEEDED, NEWS_FETCH_FAILED, UPVOTE_UPDATE_SUCCESS } from './actionTypes';
 
 const initialState = {
 	hits: [],
@@ -16,8 +16,20 @@ export default function (state = initialState, action) {
 			};
 		}
 		case NEWS_FETCH_FAILED: {
-			console.log(action);
 			return state;
+		}
+		case UPVOTE_UPDATE_SUCCESS: {
+			const { upvoteInfo } = action.payload;
+			const newHits = state.hits.map((hit) => {
+				if (hit.objectID === upvoteInfo.objectID) {
+					hit = upvoteInfo;
+				}
+				return hit;
+			});
+			return {
+				...state,
+				hits: [...newHits],
+			};
 		}
 		default:
 			return state;

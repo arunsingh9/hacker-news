@@ -14,11 +14,16 @@ const UpVoteButton = styled.span`
 	line-height: 0px;
 	text-align: center;
 	vertical-align: top;
+	cursor: pointer;
 `;
 
 const ItemContainer = styled.div`
 	display: grid;
 	grid-template-columns: 0.15fr 0.06fr 1fr;
+	@media (max-width: 648px) {
+		grid-template-columns: 0.15fr 0.15fr 1fr;
+		margin-bottom: 10px;
+	}
 `;
 
 const LightText = styled.span`
@@ -33,7 +38,7 @@ const HideButton = styled.span`
 	cursor: pointer;
 `;
 
-export const ListItem = ({ data }) => {
+export const ListItem = ({ data, incrementUpvote }) => {
 	let hiddenNewsIds = [];
 	const [show, setShow] = useState(true);
 	const { title, author, num_comments, points, url, created_at, objectID } = data;
@@ -58,13 +63,21 @@ export const ListItem = ({ data }) => {
 		setShow(!hiddenNewsIds.includes(objectID));
 	}, [show]);
 
+	const upVote = () => {
+		const payload = {
+			...data,
+			points: data.points + 1,
+		};
+		incrementUpvote(payload);
+	};
+
 	return (
 		<React.Fragment>
 			{show && (
 				<ItemContainer>
 					<CommentsElement>{num_comments}</CommentsElement>
 					<p>
-						{points} <UpVoteButton>&#129169;</UpVoteButton>
+						{points} <UpVoteButton onClick={upVote}>&#129169;</UpVoteButton>
 					</p>
 					<p>
 						<span>{title}</span>
