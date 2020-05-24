@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const CommentsElement = styled.p`
 	display: inline-block;
 	text-align: center;
+	justify-content: center;
 `;
 
 const UpVoteButton = styled.span`
@@ -20,9 +21,15 @@ const UpVoteButton = styled.span`
 const ItemContainer = styled.div`
 	display: grid;
 	grid-template-columns: 0.15fr 0.06fr 1fr;
+	padding: 4px 0;
 	@media (max-width: 648px) {
 		grid-template-columns: 0.15fr 0.15fr 1fr;
 		margin-bottom: 10px;
+	}
+	p {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
 	}
 `;
 

@@ -8,8 +8,11 @@ import { ListItem } from '../components/ListItem';
 import { fetchNews, incrementUpvote } from '../redux/actionTypes';
 
 const ListContainer = styled.section`
-	padding: 25px 0;
+	padding: 15px 0 0;
 	background: #f6f6ef;
+	> div :nth-child(even) {
+		background: #dcdcd5;
+	}
 `;
 
 const LoadMoreBtn = styled.section`
@@ -21,6 +24,7 @@ const LoadMoreBtn = styled.section`
 	text-align: center;
 	cursor: pointer;
 	text-decoration: underline;
+	font-weight: 900;
 `;
 
 const mapStateToProps = (state /*, ownProps*/) => {
