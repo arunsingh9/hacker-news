@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --open --mode development",
+		"start": "node ./server-build/index.js",
 		"dev:build-server": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
 		"dev:build-client": "NODE_ENV=development webpack --config webpack.config.js --mode=development -w",
 		"dev:start": "nodemon ./server-build/index.js",
