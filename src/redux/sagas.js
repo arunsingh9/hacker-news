@@ -8,7 +8,7 @@ import {
 } from './actionTypes';
 
 const callNewsApi = async (pageNumber) => {
-	const response = await fetch(`http://hn.algolia.com/api/v1/search_by_date?tags=story&page=${pageNumber}`);
+	const response = await fetch(`https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${pageNumber}`);
 	const news = await response.json();
 	return news;
 };
