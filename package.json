@@ -47,6 +47,7 @@
 	"dependencies": {
 		"@babel/runtime": "^7.9.6",
 		"compression": "^1.7.4",
+		"dexie": "^3.0.1",
 		"express": "^4.17.1",
 		"install": "^0.13.0",
 		"isomorphic-unfetch": "^3.0.0",

@@ -45,7 +45,7 @@ const HideButton = styled.span`
 	cursor: pointer;
 `;
 
-export const ListItem = ({ data, incrementUpvote }) => {
+export const ListItem = ({ data, incrementUpvote, fetchUpvote }) => {
 	let hiddenNewsIds = [];
 	const [show, setShow] = useState(true);
 	const { title, author, num_comments, points, url, created_at, objectID } = data;
@@ -68,6 +68,10 @@ export const ListItem = ({ data, incrementUpvote }) => {
 	useEffect(() => {
 		hiddenNewsIds = JSON.parse(localStorage.getItem('hiddenNewsIds')) || [];
 		setShow(!hiddenNewsIds.includes(objectID));
+		const payload = {
+			id: objectID,
+		};
+		fetchUpvote(payload);
 	}, [show]);
 
 	const upVote = () => {

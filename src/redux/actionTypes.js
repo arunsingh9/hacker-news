@@ -3,6 +3,8 @@ export const NEWS_FETCH_FAILED = 'NEWS_FETCH_FAILED';
 export const NEWS_FETCH_REQUESTED = 'NEWS_FETCH_REQUESTED';
 export const INCREMENT_UPVOTE = 'INCREMENT_UPVOTE';
 export const UPVOTE_UPDATE_SUCCESS = 'UPVOTE_UPDATE_SUCCESS';
+export const FETCH_UPVOTE = 'FETCH_UPVOTE';
+export const FETCH_UPVOTE_SUCCESS = 'FETCH_UPVOTE_SUCCESS';
 
 export const fetchNews = (pageNumber) => ({
 	type: NEWS_FETCH_REQUESTED,
@@ -12,4 +14,8 @@ export const fetchNews = (pageNumber) => ({
 export const incrementUpvote = (upvoteInfo) => ({
 	type: INCREMENT_UPVOTE,
 	payload: { upvoteInfo },
+});
+
+export const fetchUpvote = () => ({
+	type: FETCH_UPVOTE,
 });

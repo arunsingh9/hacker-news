@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 //import { AppContext } from '../AppContext';
 import { ListItem } from '../components/ListItem';
-import { fetchNews, incrementUpvote } from '../redux/actionTypes';
+import { fetchNews, incrementUpvote, fetchUpvote } from '../redux/actionTypes';
 
 const ListContainer = styled.section`
 	padding: 15px 0 0;
@@ -30,9 +30,9 @@ const mapStateToProps = (state /*, ownProps*/) => {
 	};
 };
 
-const mapDispatchToProps = { fetchNews, incrementUpvote };
+const mapDispatchToProps = { fetchNews, incrementUpvote, fetchUpvote };
 
-const List = ({ hits, pageNumber, fetchNews, incrementUpvote }) => {
+const List = ({ hits, pageNumber, fetchNews, incrementUpvote, fetchUpvote }) => {
 	const loadMore = () => {
 		fetchNews(pageNumber + 1);
 	};
@@ -42,7 +42,9 @@ const List = ({ hits, pageNumber, fetchNews, incrementUpvote }) => {
 				{!hits && <p>Loading ...</p>}
 				{hits &&
 					hits.map((hit, i) => {
-						return <ListItem data={hit} key={i} incrementUpvote={incrementUpvote} />;
+						return (
+							<ListItem data={hit} key={i} incrementUpvote={incrementUpvote} fetchUpvote={fetchUpvote} />
+						);
 					})}
 			</ListContainer>
 			<LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
