@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component snapshot renders 1`] = `
+<header
+  className="Header__Wrapper-ctQkEG jPUWZB"
+>
+  <a
+    className="Header__BrandIcon-beZnkd coImAA"
+    href="#"
+  >
+    Y
+  </a>
+  <a
+    className="Header__SkipLink-efkLJE eCvdvP"
+    href="#main"
+  >
+    New
+  </a>
+</header>
+`;

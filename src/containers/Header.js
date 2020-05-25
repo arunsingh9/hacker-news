@@ -22,11 +22,13 @@ const SkipLink = styled.a`
 	font-size: 12px;
 `;
 
+export const SkipLinkElement = () => <SkipLink href='#main'>New</SkipLink>;
+
 export const Header = () => {
 	return (
 		<Wrapper>
 			<BrandIcon href='#'>Y</BrandIcon>
-			<SkipLink href='#main'>New</SkipLink>
+			<SkipLinkElement />
 		</Wrapper>
 	);
 };

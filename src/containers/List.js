@@ -15,15 +15,12 @@ const ListContainer = styled.section`
 	}
 `;
 
-const LoadMoreBtn = styled.section`
-	border: none;
-	background: none;
+const LoadMoreBtn = styled.button`
 	color: #ff6600;
 	margin: 20px 0;
-	width: 100%;
 	text-align: center;
 	cursor: pointer;
-	text-decoration: underline;
+	border: 1px solid #ff6600;
 	font-weight: 900;
 `;
 
