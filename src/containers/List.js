@@ -16,11 +16,10 @@ const ListContainer = styled.section`
 `;
 
 const LoadMoreBtn = styled.button`
-	color: #ff6600;
+	color: #b53309;
 	margin: 20px 0;
 	text-align: center;
 	cursor: pointer;
-	border: 1px solid #ff6600;
 	font-weight: 900;
 `;
 
