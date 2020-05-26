@@ -8,7 +8,7 @@
 - [x] styled-component for styling and grid layout and mobile-view friendly.
 - [x] Testing with jest,enzyme and react-test-renderer.
 - [x] Progressive Web App.
-- [x] Indexed db for 'upvote' functionality management.
+- [x] Indexed db for 'upvote' functionality management (can be easily replaced with REST API).
 - [x] Localstorage for 'Hide' functionality management.
 - [x] Auto build trigger on Heroku with code push to github.
 
