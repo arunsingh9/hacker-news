@@ -36,15 +36,17 @@ const List = ({ hits, pageNumber, fetchNews, incrementUpvote, fetchUpvote }) => 
 	const loadMore = () => {
 		fetchNews(pageNumber + 1);
 	};
+
+	useEffect(() => {
+		fetchUpvote();
+	}, []);
 	return (
 		<Fragment>
 			<ListContainer>
 				{!hits && <p>Loading ...</p>}
 				{hits &&
 					hits.map((hit, i) => {
-						return (
-							<ListItem data={hit} key={i} incrementUpvote={incrementUpvote} fetchUpvote={fetchUpvote} />
-						);
+						return <ListItem data={hit} key={i} incrementUpvote={incrementUpvote} />;
 					})}
 			</ListContainer>
 			<LoadMoreBtn onClick={loadMore}>Load More</LoadMoreBtn>
