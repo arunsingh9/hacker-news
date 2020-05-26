@@ -5,8 +5,9 @@
 
 - [x] React, Redux, Redux-Saga.
 - [x] Server-side Rendering.
-- [x] styled-component for styling and grid layout for responsive.
+- [x] styled-component for styling and grid layout and mobile-view friendly.
 - [x] Testing with jest,enzyme and react-test-renderer.
+- [x] Progressive Web App.
 - [x] Indexed db for 'upvote' functionality management.
 - [x] Localstorage for 'Hide' functionality management.
 - [x] Auto build trigger on Heroku with code push to github.
