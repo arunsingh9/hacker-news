@@ -16,6 +16,8 @@ const UpVoteButton = styled.span`
 	text-align: center;
 	vertical-align: top;
 	cursor: pointer;
+	background: url('/static/images/grayarrow.gif') no-repeat;
+	background-position: 5px 5px;
 `;
 
 const ItemContainer = styled.div`
@@ -88,7 +90,7 @@ export const ListItem = ({ data, incrementUpvote, fetchUpvote }) => {
 				<ItemContainer>
 					<CommentsElement>{num_comments}</CommentsElement>
 					<p>
-						{points} <UpVoteButton onClick={upVote}>&#129169;</UpVoteButton>
+						{points} <UpVoteButton onClick={upVote}></UpVoteButton>
 					</p>
 					<p>
 						<span>{title}</span>
