@@ -8,8 +8,8 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
 	({ request }) => request.destination === 'script' || request.destination === 'style',
-	new NetworkFirst({
-		cacheName: 'static-resources',
+	new StaleWhileRevalidate({
+		cacheName: 'static-resources-v1',
 	})
 );
 
