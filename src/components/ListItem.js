@@ -73,7 +73,9 @@ export const ListItem = ({ data, incrementUpvote, fetchUpvote }) => {
 		const payload = {
 			id: objectID,
 		};
-		fetchUpvote(payload);
+		if (fetchUpvote) {
+			fetchUpvote(payload);
+		}
 	}, [show]);
 
 	const upVote = () => {
