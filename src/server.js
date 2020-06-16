@@ -91,7 +91,7 @@ function renderFullPage(app, finalState, styleTags) {
 			// https://redux.js.org/recipes/server-rendering/#security-considerations
 			window.__PRELOADED_STATE__ = ${JSON.stringify(finalState).replace(/</g, '\\u003c')}
 		  </script>
-		  <script src="main.js"></script>
+		  <script src="main.js?v=1.0"></script>
 		  <script>
 			if ('serviceWorker' in navigator) {
 				window.addEventListener('load', function() {
